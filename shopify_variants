@@ -1,0 +1,17 @@
+{%if option.name == "Color"%}
+
+                  <label>{{option.name}}</label>
+                    {%assign index = forloop.index %}
+                    <div class="variant-swatches">
+                      {%for value in option.values%}
+                        <input class="single-option-selector-{{ section.id }}" id="color-{{forloop.index}}" type="radio" name="color"  value="{{ value | escape }}" data-index="option{{index}}"/>
+                        <label for="color-{{forloop.index}}">
+                        <img src="{{value | escape | append:'.png' | strip | asset_url}}"/>
+                        <!--   {{value}} -->
+                        </label>
+                      {%endfor%}
+                  </div>
+
+                {%else%} 
+
+{%endif%}
